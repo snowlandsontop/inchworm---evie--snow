@@ -53,7 +53,6 @@ input.onButtonPressed(Button.A, function () {
     radio.sendNumber(1)
 })
 radio.onReceivedString(function (receivedString) {
-    music.setVolume(60)
     for (let index = 0; index < 3; index++) {
         basic.showLeds(`
             . . . . .
@@ -62,7 +61,6 @@ radio.onReceivedString(function (receivedString) {
             . . . . .
             . . . . .
             `)
-        music.play(music.stringPlayable("A F - C - - - - ", 120), music.PlaybackMode.UntilDone)
         pins.servoWritePin(AnalogPin.P0, 0)
         basic.pause(200)
         pins.servoWritePin(AnalogPin.P0, 180)
@@ -74,6 +72,8 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onGesture(Gesture.Shake, function () {
     radio.sendString("back")
+    music.setVolume(60)
+    music.play(music.stringPlayable("A F F C - F E E ", 120), music.PlaybackMode.UntilDone)
 })
 let runservo = 0
 runservo = 0
