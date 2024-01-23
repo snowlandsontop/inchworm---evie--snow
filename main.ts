@@ -73,7 +73,7 @@ input.onButtonPressed(Button.B, function () {
 input.onGesture(Gesture.Shake, function () {
     radio.sendString("back")
     music.setVolume(60)
-    music.play(music.stringPlayable("A F F C - F E E ", 120), music.PlaybackMode.UntilDone)
+    music.play(music.stringPlayable("A G F E E F G A ", 120), music.PlaybackMode.UntilDone)
 })
 let runservo = 0
 runservo = 0
